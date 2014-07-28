@@ -6,6 +6,149 @@
 @import "compass/reset";
 @import "variables";
 
-body {
-  // background: red;
+$hfont: Georgia; 
+$lfont: "Abel", Trebuchet MS, Helvetica;
+$bodyfont: Arial;
+
+$fst_color: black;
+$snd_color: white;
+$thd_color: #668134;
+$nav_scale: 40px;
+
+%bodyfont {
+	font-family: $bodyfont;
+	font-size: 95%;
 }
+
+@mixin lfont($color) {
+	color: $color;
+	font-family: $lfont;
+	font-size: 95%;
+}
+
+@mixin cols($w) {
+	float: left;
+	width: $w;
+}
+
+@mixin format($pos, $top, $ml) {
+	position: $pos;
+	top: $top;
+	margin-left: $ml;
+}
+
+@mixin widthform($overflow, $w) {
+	overflow: $overflow;
+	width: $w;
+}
+
+.above-header, footer {
+	background: $fst_color;
+}
+
+footer {
+	height: $nav_scale * 2;
+	p {
+		@include format(relative, ($nav_scale / 2), ($nav_scale / 3));
+		@include lfont($snd_color);
+	}
+}
+
+#main-nav {
+	height: $nav_scale;
+	a {
+		color: $snd_color;
+		@include format(relative, ($nav_scale / 3), ($nav_scale));
+		font-family: $hfont;
+	}
+}
+
+.logo {
+	background: $thd_color;
+	height: 4 * $nav_scale;
+	@include widthform(hidden, auto);
+	a {
+		@include format(absolute, ($nav_scale * 2), ($nav_scale));
+		color: white;
+		font-size: 400%;
+		font-family: $hfont;
+	}
+}
+
+#logopic {
+	position: relative; 
+	overflow: hidden;
+	left: 65%;
+}
+
+#content-wrap {
+	@include widthform(auto, auto);
+	padding: $nav_scale;
+}
+
+#content {
+	@include cols(50%);
+	article {
+		p {
+			@extend %bodyfont;
+			margin: $nav_scale / 2 auto;
+			line-height: 180%;
+		}
+	}
+}
+
+.content-center {
+	@include cols(25%);
+	margin: 0px 20px 0px 20px;
+	line-height: 130%;
+	h2 {
+		margin-bottom: 30px;
+	}
+	li {
+		margin-bottom: 10px;
+	}
+}
+
+.content-right {
+	@include cols(20%);
+	article {
+		line-height: 120%;
+		h3 {
+			margin-top: 30px;
+		}
+		p {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+
+}
+
+.teaser-list {
+	p {
+		@include lfont($fst_color);
+	}
+}
+
+h1 {
+	font-size: 200%;
+}
+
+h2, h3 {
+	font-size: 120%;
+}
+
+h1, h2, h3 {
+	color: $thd_color;
+}
+
+article {
+	color: $fst_color;
+}
+
+a {
+	text-decoration: none;
+	color: $thd_color;
+	@extend %bodyfont;
+}
+
