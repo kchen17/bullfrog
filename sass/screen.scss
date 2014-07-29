@@ -17,9 +17,18 @@
 
 // Placeholder selectors
 %quarter-col {
-  margin: 0 24px;
-  width: 267px;
-  float: left;
+  @include col(1/4);
+  @include box-sizing(border-box);
+  @include edit();
+  padding: 0px;
+  @include breakpoint($breakpoint-medium-width) {
+    @include col(2/4);
+    padding: 12px;
+  }
+  @include breakpoint($breakpoint-small-width) {
+    @include col(1/1);
+    padding: 24px;
+  }
 }
 
 // Main styles
@@ -34,8 +43,7 @@ h2 {
 }
 
 #page {
-  width: 1225px;
-  margin: 0 auto;
+  @include center(1224px);
 }
 
 #main-nav {
@@ -45,6 +53,9 @@ h2 {
     line-height: 40px;
     font-size: 14px;
     padding: 0 24px 0 24px;
+    @include breakpoint($breakpoint-small-width) {
+      padding: 0 12px 0 12px;
+    }
     &:hover {
       text-decoration: underline;
     }
@@ -55,16 +66,26 @@ header#top {
   padding: 50px 24px;
   background: $froggreen url("../images/bullfrog-header.png") no-repeat right center;
   margin-bottom: 48px;
+  @include breakpoint($breakpoint-medium-width) {
+    margin-bottom: 0;
+  }
   .logo a {
     font-size: 72px;
     color: white;
     text-decoration: none;
+    @include breakpoint($breakpoint-small-width) {
+      font-size: 48px;
+    }
   }
 }
 
 #content {
-  width: 578px;
-  float: left;
+  @include col(2/4);
+  @include box-sizing(border-box);
+  @include breakpoint($breakpoint-medium-width) {
+    @include col(1/1);
+    padding: 24px;
+  }
 }
 
 article {
