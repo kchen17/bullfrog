@@ -4,7 +4,9 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "breakpoint";
 @import "variables";
+@import "../jeet/index";
 
 $hfont: Georgia; 
 $lfont: "Abel", Trebuchet MS, Helvetica;
@@ -82,11 +84,12 @@ footer {
 }
 
 #content-wrap {
-	@include widthform(auto, auto);
+  @include widthform(auto, auto);
 	padding: $nav_scale;
 }
 
 #content {
+  @include edit();
 	@include cols(50%);
 	article {
 		p {
