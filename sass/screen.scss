@@ -16,18 +16,15 @@
 }
 
 // Placeholder selectors
-%quarter-col {
-  @include col(1/4);
+%tab-col {
+  @include col(1/1);
   @include box-sizing(border-box);
-  @include edit();
-  padding: 0px;
+  padding: 20px;
   @include breakpoint($breakpoint-medium-width) {
-    @include col(2/4);
     padding: 12px;
   }
   @include breakpoint($breakpoint-small-width) {
-    @include col(1/1);
-    padding: 24px;
+    padding: 12px;
   }
 }
 
@@ -88,6 +85,43 @@ header#top {
   }
 }
 
+@mixin boxform($ratio, $px) {
+  @include col($ratio);
+  @include box-sizing(border-box);
+  padding: $px;
+}
+
+.snd {
+  @include boxform(2/4, 10px);
+  @include breakpoint($breakpoint-medium-width) {
+    @include boxform(1/1, 16px);
+  }
+  @include breakpoint($breakpoint-medium-width) {
+    @include boxform(1/1, 20px);
+  }
+  section {
+    border: 1px solid gray;
+    z-index: 1;
+  }
+}
+
+.tabs {
+  display: block;
+  a {
+    color: white;
+    background-color: $froggreen;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 10px;
+    float: left;
+    border: 1px solid gray;
+    border-bottom: 2px solid white;
+    margin-bottom: -2px;
+    position: relative;
+    z-index: 5;
+  }
+}
+
 article {
   font-size: 16px;
   line-height: 27px;
@@ -101,15 +135,15 @@ article {
   }
 }
 
-section.content-center,
-section.content-right {
-  @extend %quarter-col;
+section#content-center,
+section#content-right {
+  @extend %tab-col;
   a {
     @include froglinks($froggreen);
   }
 }
 
-section.content-center {
+section#content-center {
   ul {
     font-family: $frogsans;
     li {
@@ -121,7 +155,7 @@ section.content-center {
 }
 
 
-section.content-right {
+section#content-right {
   article {
     p {
       font-size: 14px;

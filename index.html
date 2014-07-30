@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Bullfrog</title>
   <link rel="stylesheet" href="stylesheets/screen.css">
+  <script src="jquery/dist/jquery.min.js"></script>
+  <script src="scripts/bullfrog.js"></script>
+  
 </head>
 
 <body>
@@ -39,9 +42,14 @@
       </main>
       <!-- End main content -->
 
+      <div class="snd">
+      <ul class="tabs">
+        <li><a href="#content-center">Related articles</a></li>
+        <li><a href="#content-right">Featured articles</a></li>
+      </ul>
       <!-- Start center content -->
-      <section class="content-center">
-        <h2 class="section-title">Related articles</h2>
+      <section id="content-center">
+        <br />
         <ul>
           <li><a href="#"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></a></li>
           <li><a href="#"><span>Donec malesuada ipsum nec volutpat scelerisque.</span></a></li>
@@ -59,8 +67,7 @@
       <!-- End center content -->
 
       <!-- Start right side content -->
-      <section class="content-right">
-        <h2 class="section-title">Featured articles</h2>
+      <section id="content-right">
         <article class=teaser-list>
           <h3 class="featured-article-title">Lorem ipsum dolor sit amet, consectetur</h3>
           <p>Nullam viverra odio quis suscipit suscipit. Fusce faucibus sapien sed tellus sodales, id ultrices augue imperdiet. Proin nibh erat, imperdiet at nunc non, sollicitudin tincidunt nunc. Sed sollicitudin dui a neque lobortis volutpat. Donec interdum molestie…</p>
@@ -73,7 +80,7 @@
         </article>
       </section>
       <!-- End right side content -->
-
+    </div>
     </div>
     <!-- End content wrapper -->
     <footer>
