@@ -320,7 +320,7 @@ header#top .logo a {
   padding: 10px;
   float: left;
   border: 1px solid gray;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
   margin-bottom: -2px;
   position: relative;
   z-index: 5;
