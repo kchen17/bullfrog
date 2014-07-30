@@ -25,7 +25,7 @@ $(document).ready(function() {
 			$active.addClass('active');
 			$active.css('background-color','white');
 			$active.css('color', '#668134');
-			$content.show();
+			$content.slideDown("slow");
 
 
 			e.preventDefault();
