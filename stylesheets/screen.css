@@ -325,6 +325,10 @@ header#top .logo a {
   position: relative;
   z-index: 5;
 }
+.tabs a.active {
+  background-color: white;
+  color: #668134;
+}
 
 article {
   font-size: 16px;

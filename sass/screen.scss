@@ -120,6 +120,10 @@ header#top {
     position: relative;
     z-index: 5;
   }
+  a.active {
+    background-color: white;
+    color: $froggreen;
+  }
 }
 
 article {
